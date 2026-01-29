@@ -24,10 +24,10 @@ export default function RootLayout({
               <span>📧 hugogallardo2004@gmail.com</span>
             </div>
             <div className="flex gap-3">
-              <a href="https://www.facebook.com/PeluqueriaJairollera/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
+              <a href="https://www.facebook.com/hugoogallardo/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
                 Facebook
               </a>
-              <a href="https://www.instagram.com/peluqueriajairollera/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
+              <a href="https://www.instagram.com/hugoogallardo/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
                 Instagram
               </a>
             </div>

@@ -4,11 +4,11 @@ export default function QuienesSomos() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-8 md:px-12 lg:px-16 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-6xl mx-auto text-center mb-16">
+      <section className="py-12 px-4 sm:px-8 md:px-12 lg:px-16 bg-linear-to-b from-gray-50 to-white">
+        <div className="max-w-6xl mx-auto text-center mb-2">
           <h1 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
             Quiénes
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gray-800 to-gray-700">
+            <span className="block text-transparent bg-clip-text bg-linear-to-r from-gray-800 to-gray-700">
               Somos
             </span>
           </h1>
@@ -19,13 +19,13 @@ export default function QuienesSomos() {
       </section>
 
       {/* Contenido Principal */}
-      <section className="py-16 px-4 sm:px-8 md:px-12 lg:px-16">
+      <section className="py-8 px-4 sm:px-8 md:px-12 lg:px-16">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <div className="space-y-2">
               <h2 className="text-4xl font-black text-gray-900">
                 Nuestro
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gray-800 to-gray-700">
+                <span className="block text-transparent bg-clip-text bg-linear-to-r from-gray-800 to-gray-700">
                   establecimiento
                 </span>
               </h2>
@@ -38,21 +38,21 @@ export default function QuienesSomos() {
             </p>
             <div className="space-y-3 pt-4">
               <div className="flex items-start gap-3">
-                <span className="text-2xl text-gray-700">🕐</span>
+                <span className="text-2xl text-gray-700"></span>
                 <div>
                   <p className="font-bold text-gray-900">Horario</p>
                   <p className="text-gray-600">Lunes a Viernes 10:00 – 20:30</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <span className="text-2xl text-gray-700">📍</span>
+                <span className="text-2xl text-gray-700"></span>
                 <div>
                   <p className="font-bold text-gray-900">Dirección</p>
                   <p className="text-gray-600">Avenida Sinforiano Madroñero</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <span className="text-2xl text-gray-700">📞</span>
+                <span className="text-2xl text-gray-700"></span>
                 <div>
                   <p className="font-bold text-gray-900">Teléfono</p>
                   <p className="text-gray-600">622 50 59 92</p>
@@ -62,14 +62,14 @@ export default function QuienesSomos() {
           </div>
 
           <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-gray-600 to-gray-700 rounded-xl opacity-75 group-hover:opacity-100 transition blur group-hover:blur-lg"></div>
+            <div className="absolute -inset-1 bg-linear-to-r from-gray-600 to-gray-700 rounded-xl opacity-75 group-hover:opacity-100 transition blur group-hover:blur-lg"></div>
             <div className="relative bg-white rounded-xl overflow-hidden shadow-2xl">
               <Image
-                src="/corte.jpg"
+                src="/quienes.png"
                 alt="Interior de la peluquería"
                 width={600}
                 height={400}
-                className="object-cover w-full h-auto transition-transform duration-500 group-hover:scale-105"
+                className="object-cover w-full h-130 transition-transform duration-500 group-hover:scale-105"
               />
             </div>
           </div>
@@ -107,7 +107,7 @@ export default function QuienesSomos() {
           </p>
           <a
             href="/reservas"
-            className="inline-block bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-800 hover:to-gray-900 text-white font-bold px-8 py-4 rounded-full transition transform hover:scale-105 shadow-lg"
+            className="inline-block bg-linear-to-r from-gray-700 to-gray-800 hover:from-gray-800 hover:to-gray-900 text-white font-bold px-8 py-4 rounded-full transition transform hover:scale-105 shadow-lg"
           >
             Reservar cita
           </a>

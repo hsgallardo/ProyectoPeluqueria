@@ -2,7 +2,7 @@ export default function Contacto() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-8 md:px-12 lg:px-16 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-20 px-4 sm:px-8 md:px-12 lg:px-16 bg-linear-to-b from-gray-50 to-white">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
             Contacto
@@ -119,7 +119,7 @@ export default function Contacto() {
                 href="https://www.google.com/maps/search/?api=1&query=Avenida+Sinforiano+Madroñero+Badajoz"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-800 hover:to-gray-900 text-white font-bold px-6 py-3 rounded-full transition transform hover:scale-105"
+                className="inline-block bg-linear-to-r from-gray-700 to-gray-800 hover:from-gray-800 hover:to-gray-900 text-white font-bold px-6 py-3 rounded-full transition transform hover:scale-105"
               >
                 Ver en Google Maps
               </a>
@@ -139,7 +139,7 @@ export default function Contacto() {
           </p>
           <a
             href="/reservas"
-            className="inline-block bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-800 hover:to-gray-900 text-white font-bold px-8 py-4 rounded-full transition transform hover:scale-105 shadow-lg"
+            className="inline-block bg-linear-to-r from-gray-700 to-gray-800 hover:from-gray-800 hover:to-gray-900 text-white font-bold px-8 py-4 rounded-full transition transform hover:scale-105 shadow-lg"
           >
             Reservar cita
           </a>

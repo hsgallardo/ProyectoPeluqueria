@@ -37,11 +37,11 @@ export default function Servicios() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-8 md:px-12 lg:px-16 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-20 px-4 sm:px-8 md:px-12 lg:px-16 bg-linear-to-b from-gray-50 to-white">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
             Nuestros
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gray-800 to-gray-700">
+            <span className="block text-transparent bg-clip-text bg-linear-to-r from-gray-800 to-gray-700">
               Servicios
             </span>
           </h1>
@@ -60,7 +60,7 @@ export default function Servicios() {
               className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
               {/* Imagen del servicio */}
-              <div className="h-48 flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200">
+              <div className="h-48 flex items-center justify-center bg-linear-to-br from-gray-100 to-gray-200">
                 <img
                   src={servicio.src}
                   alt={servicio.nombre}
@@ -125,7 +125,7 @@ export default function Servicios() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/reservas"
-              className="bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-800 hover:to-gray-900 text-white font-bold px-8 py-4 rounded-full transition transform hover:scale-105 shadow-lg"
+              className="bg-linear-to-r from-gray-700 to-gray-800 hover:from-gray-800 hover:to-gray-900 text-white font-bold px-8 py-4 rounded-full transition transform hover:scale-105 shadow-lg"
             >
               Reservar cita
             </a>

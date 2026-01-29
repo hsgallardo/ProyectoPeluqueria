@@ -44,7 +44,7 @@ export default function Home() {
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+        <div className="absolute inset-0 bg-linear-to-b from-black/60 via-black/50 to-black/70"></div>
         <div className="absolute inset-0 opacity-20" style={{
           backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(0,0,0,0.2) 0%, transparent 50%)'
         }}></div>
@@ -52,7 +52,7 @@ export default function Home() {
         <div className="relative z-10 text-white px-6 max-w-3xl mx-auto">
           <h1 className="text-6xl md:text-7xl font-black mb-6 drop-shadow-2xl leading-tight">
             Peluquería
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gray-100 via-white to-gray-100">
+            <span className="block text-transparent bg-clip-text bg-linear-to-r from-gray-100 via-white to-gray-100">
               Corte y Brocha
             </span>
           </h1>
@@ -61,7 +61,7 @@ export default function Home() {
           </p>
           <a
             href="/reservas"
-            className="inline-block bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-800 hover:to-gray-900 text-white font-bold px-8 py-4 rounded-full transition transform hover:scale-105 shadow-lg"
+            className="inline-block bg-linear-to-r from-gray-700 to-gray-800 hover:from-gray-800 hover:to-gray-900 text-white font-bold px-8 py-4 rounded-full transition transform hover:scale-105 shadow-lg"
           >
             Reserva tu cita ahora
           </a>
@@ -75,7 +75,7 @@ export default function Home() {
             <div className="space-y-2">
               <h2 className="text-5xl font-black text-gray-900">
                 Nuestro
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gray-800 to-gray-700">
+                <span className="block text-transparent bg-clip-text bg-linear-to-r from-gray-800 to-gray-700">
                   establecimiento
                 </span>
               </h2>
@@ -109,7 +109,7 @@ export default function Home() {
           </div>
 
           <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-gray-600 to-gray-700 rounded-xl opacity-75 group-hover:opacity-100 transition blur group-hover:blur-lg"></div>
+            <div className="absolute -inset-1 bg-linear-to-r from-gray-600 to-gray-700 rounded-xl opacity-75 group-hover:opacity-100 transition blur group-hover:blur-lg"></div>
             <div className="relative bg-white rounded-xl overflow-hidden shadow-2xl">
               <Image
                 src="/corte.jpg"
@@ -145,11 +145,11 @@ export default function Home() {
                 }}
               >
                 {/* Card base */}
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-gray-600 via-gray-500 to-gray-600 rounded-xl opacity-0 group-hover:opacity-100 transition duration-300 blur"></div>
+                <div className="absolute -inset-0.5 bg-linear-to-r from-gray-600 via-gray-500 to-gray-600 rounded-xl opacity-0 group-hover:opacity-100 transition duration-300 blur"></div>
                 
                 <div className="relative rounded-xl overflow-hidden h-full" style={{backgroundColor: '#252525'}}>
                   {/* Contenido */}
-                  <div className="h-40 flex flex-col justify-center items-center bg-gradient-to-br from-gray-700 to-gray-800 p-6 text-center group-hover:bg-gray-700 transition" style={{backgroundImage: 'linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%)'}}>
+                  <div className="h-40 flex flex-col justify-center items-center bg-linear-to-br from-gray-700 to-gray-800 p-6 text-center group-hover:bg-gray-700 transition" style={{backgroundImage: 'linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%)'}}>
                     <img
                       src={servicio.src}
                       alt={servicio.nombre}
@@ -179,7 +179,7 @@ export default function Home() {
           <div className="space-y-4">
             <h2 className="text-5xl md:text-6xl font-black text-gray-900">
               ¿Listo para tu
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gray-800 to-gray-700">
+              <span className="block text-transparent bg-clip-text bg-linear-to-r from-gray-800 to-gray-700">
                 nuevo look?
               </span>
             </h2>
@@ -191,7 +191,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <a
               href="/reservas"
-              className="bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-800 hover:to-gray-900 text-white font-bold px-8 py-4 rounded-full transition transform hover:scale-105 shadow-lg"
+              className="bg-linear-to-r from-gray-700 to-gray-800 hover:from-gray-800 hover:to-gray-900 text-white font-bold px-8 py-4 rounded-full transition transform hover:scale-105 shadow-lg"
             >
               Reservar cita
             </a>
