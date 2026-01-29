@@ -42,16 +42,16 @@ export default function RootLayout({
               <a href="/" className="hover:text-gray-300 transition">
                 Inicio
               </a>
-              <a href="#quienes-somos" className="hover:text-gray-300 transition">
+              <a href="/quienes-somos" className="hover:text-gray-300 transition">
                 Quiénes Somos
               </a>
-              <a href="#servicios" className="hover:text-gray-300 transition">
+              <a href="/servicios" className="hover:text-gray-300 transition">
                 Servicios
               </a>
               <a href="/reservas" className="hover:text-gray-300 transition">
                 Citas
               </a>
-              <a href="#contacto" className="hover:text-gray-300 transition">
+              <a href="/contacto" className="hover:text-gray-300 transition">
                 Contacto
               </a>
             </nav>
@@ -84,9 +84,10 @@ export default function RootLayout({
               <div>
                 <h4 className="font-bold mb-4">Enlaces</h4>
                 <div className="flex flex-col gap-2 text-sm text-gray-300">
-                  <a href="#quienes-somos" className="hover:text-white">Quiénes Somos</a>
-                  <a href="#servicios" className="hover:text-white">Servicios</a>
+                  <a href="/quienes-somos" className="hover:text-white">Quiénes Somos</a>
+                  <a href="/servicios" className="hover:text-white">Servicios</a>
                   <a href="/reservas" className="hover:text-white">Reservas</a>
+                  <a href="/contacto" className="hover:text-white">Contacto</a>
                 </div>
               </div>
             </div>
