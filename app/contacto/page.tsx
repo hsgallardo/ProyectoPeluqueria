@@ -67,7 +67,7 @@ export default function Contacto() {
               </h3>
               <div className="space-y-6">
                 <a 
-                  href="https://www.facebook.com/PeluqueriaJairollera/" 
+                  href="https://www.facebook.com/hugoogallardo/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 rounded-lg hover:bg-blue-50 transition group"
@@ -80,7 +80,7 @@ export default function Contacto() {
                 </a>
                 
                 <a 
-                  href="https://www.instagram.com/peluqueriajairollera/" 
+                  href="https://www.instagram.com/hugoogallardo/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 rounded-lg hover:bg-pink-50 transition group"
