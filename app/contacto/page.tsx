@@ -20,7 +20,7 @@ export default function Contacto() {
           <div className="space-y-6">
             <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
               <h3 className="font-bold text-2xl text-gray-900 mb-6 flex items-center gap-3">
-                <span className="text-3xl">📍</span>
+                <span className="text-3xl"></span>
                 Ubicación
               </h3>
               <p className="text-gray-700 text-lg">Avenida Sinforiano Madroñero</p>
@@ -29,7 +29,7 @@ export default function Contacto() {
             
             <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
               <h3 className="font-bold text-2xl text-gray-900 mb-6 flex items-center gap-3">
-                <span className="text-3xl">📞</span>
+                <span className="text-3xl"></span>
                 Teléfono
               </h3>
               <a 
@@ -42,7 +42,7 @@ export default function Contacto() {
             
             <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
               <h3 className="font-bold text-2xl text-gray-900 mb-6 flex items-center gap-3">
-                <span className="text-3xl">⏰</span>
+                <span className="text-3xl"></span>
                 Horario
               </h3>
               <div className="space-y-2 text-lg">
@@ -72,10 +72,10 @@ export default function Contacto() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 rounded-lg hover:bg-blue-50 transition group"
                 >
-                  <div className="text-4xl">📘</div>
+                  <div className="text-4xl"></div>
                   <div>
                     <p className="font-bold text-gray-900 group-hover:text-blue-600 transition">Facebook</p>
-                    <p className="text-sm text-gray-600">@PeluqueriaJairollera</p>
+                    <p className="text-sm text-gray-600">@hugoogallardo</p>
                   </div>
                 </a>
                 
@@ -85,15 +85,15 @@ export default function Contacto() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 rounded-lg hover:bg-pink-50 transition group"
                 >
-                  <div className="text-4xl">📷</div>
+                  <div className="text-4xl"></div>
                   <div>
                     <p className="font-bold text-gray-900 group-hover:text-pink-600 transition">Instagram</p>
-                    <p className="text-sm text-gray-600">@peluqueriajairollera</p>
+                    <p className="text-sm text-gray-600">@hugoogallardo</p>
                   </div>
                 </a>
                 
                 <div className="flex items-center gap-4 p-4 rounded-lg bg-gray-50">
-                  <div className="text-4xl">📧</div>
+                  <div className="text-4xl"></div>
                   <div>
                     <p className="font-bold text-gray-900">Email</p>
                     <a 

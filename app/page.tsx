@@ -174,7 +174,7 @@ export default function Home() {
       </section>
 
       {/* CTA FINAL - Mejorado */}
-      <section className="py-24 px-4 sm:px-8 md:px-12 lg:px-16 bg-white w-full">
+      <section className="py-18 px-4 sm:px-8 md:px-12 lg:px-16 bg-white w-full">
         <div className="text-center space-y-8">
           <div className="space-y-4">
             <h2 className="text-5xl md:text-6xl font-black text-gray-900">
