@@ -4,7 +4,7 @@ export default function Servicios() {
       nombre: "Corte de cabello",
       descripcion: "Estilo clásico y moderno",
       detalles: "Cortes personalizados adaptados a tu estilo y tipo de cabello. Desde cortes clásicos hasta los estilos más modernos y vanguardistas.",
-      src: "https://peluqueriajairollera.com/wp-content/uploads/2024/04/icons8-cutting-64.png",
+      src: "/cabello.jpg",
       width: 64,
       height: 64,
     },
@@ -12,7 +12,7 @@ export default function Servicios() {
       nombre: "Barba / Afeitado",
       descripcion: "Perfilado preciso",
       detalles: "Servicio completo de afeitado tradicional y perfilado de barba. Utilizamos técnicas clásicas con productos de alta calidad.",
-      src: "https://peluqueriajairollera.com/wp-content/uploads/2024/04/icons8-straight-razor-100.png",
+      src: "/barba.jpg",
       width: 100,
       height: 100,
     },
@@ -20,7 +20,7 @@ export default function Servicios() {
       nombre: "Micropigmentación",
       descripcion: "Técnica avanzada",
       detalles: "Micropigmentación capilar para disimular la calvicie y aportar densidad visual. Técnica avanzada con resultados naturales.",
-      src: "https://peluqueriajairollera.com/wp-content/uploads/2024/04/icons8-tattoo-machine-60.png",
+      src: "/micro.jpg",
       width: 60,
       height: 60,
     },
@@ -28,7 +28,7 @@ export default function Servicios() {
       nombre: "Coloración",
       descripcion: "Aplicación precisa",
       detalles: "Coloración profesional para cabello y barba. Productos de primera calidad para resultados duraderos y naturales.",
-      src: "https://peluqueriajairollera.com/wp-content/uploads/2024/04/icons8-drop-of-blood-50.png",
+      src: "/color.jpg",
       width: 50,
       height: 50,
     },
@@ -57,21 +57,20 @@ export default function Servicios() {
           {servicios.map((servicio) => (
             <div
               key={servicio.nombre}
-              className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              className="relative bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-shadow duration-300 h-100"
             >
-              {/* Imagen del servicio */}
-              <div className="h-48 flex items-center justify-center bg-linear-to-br from-gray-100 to-gray-200">
+              {/* Imagen de fondo */}
+              <div className="absolute inset-0">
                 <img
                   src={servicio.src}
                   alt={servicio.nombre}
-                  width={servicio.width}
-                  height={servicio.height}
-                  className="object-contain"
+                  className="w-full h-full object-cover opacity-65"
                 />
+                <div className="absolute inset-0 bg-linear-to-b from-transparent via-white/40 to-white/"></div>
               </div>
               
               {/* Contenido */}
-              <div className="p-6 space-y-4">
+              <div className="relative h-full flex flex-col justify-end p-6 space-y-4">
                 <h3 className="font-black text-2xl text-gray-900">
                   {servicio.nombre}
                 </h3>
@@ -95,17 +94,29 @@ export default function Servicios() {
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="text-5xl mb-4">⭐</div>
+              <img
+                src="/estrella.jpg"
+                alt="Experiencia"
+                className="w-16 h-16 object-cover rounded-full mx-auto mb-4"
+              />
               <h3 className="font-bold text-xl text-gray-900 mb-2">Experiencia</h3>
               <p className="text-gray-600">Más de 15 años perfeccionando nuestro arte</p>
             </div>
             <div className="text-center">
-              <div className="text-5xl mb-4">✂️</div>
+              <img
+                src="/top.jpg"
+                alt="Calidad"
+                className="w-16 h-16 object-cover rounded-full mx-auto mb-4"
+              />
               <h3 className="font-bold text-xl text-gray-900 mb-2">Calidad</h3>
               <p className="text-gray-600">Productos premium y técnicas avanzadas</p>
             </div>
             <div className="text-center">
-              <div className="text-5xl mb-4">👤</div>
+              <img
+                src="/atencion.jpg"
+                alt="Atención"
+                className="w-16 h-16 object-cover rounded-full mx-auto mb-4"
+              />
               <h3 className="font-bold text-xl text-gray-900 mb-2">Atención</h3>
               <p className="text-gray-600">Servicio personalizado para cada cliente</p>
             </div>
