@@ -64,7 +64,7 @@ export default function RootLayout({
         </main>
 
         {/* FOOTER */}
-        <footer className="text-white mt-20" style={{backgroundColor: '#000000'}}>
+        <footer className="text-white mt-8" style={{backgroundColor: '#000000'}}>
           <div className="max-w-6xl mx-auto px-4 py-12">
             <div className="grid grid-cols-3 gap-8 mb-8">
               {/* Información */}

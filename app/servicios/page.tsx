@@ -37,7 +37,7 @@ export default function Servicios() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 px-4 sm:px-8 md:px-12 lg:px-16 bg-linear-to-b from-gray-50 to-white">
+      <section className="py-20 px-4 sm:px-8 md:px-12 lg:px-16 bg-linear-to-b from-gray-300 to-white">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
             Nuestros
@@ -52,7 +52,7 @@ export default function Servicios() {
       </section>
 
       {/* Servicios Grid */}
-      <section className="py-16 px-4 sm:px-8 md:px-12 lg:px-16">
+        <section className="py-6 px-4 sm:px-8 md:px-12 lg:px-16">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           {servicios.map((servicio) => (
             <div
@@ -87,7 +87,7 @@ export default function Servicios() {
       </section>
 
       {/* Por qué elegirnos */}
-      <section className="py-16 px-4 sm:px-8 md:px-12 lg:px-16 bg-gray-50">
+      <section className="py-8 px-4 sm:px-8 md:px-12 lg:px-16 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-black text-gray-900 mb-12 text-center">
             ¿Por qué elegirnos?
@@ -125,7 +125,7 @@ export default function Servicios() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 px-4 sm:px-8 md:px-12 lg:px-16 bg-white">
+      <section className="py-12 px-4 sm:px-8 md:px-12 lg:px-16 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-black text-gray-900 mb-6">
             ¿Listo para tu nuevo look?
@@ -133,7 +133,7 @@ export default function Servicios() {
           <p className="text-xl text-gray-600 mb-8">
             Reserva tu cita y experimenta nuestros servicios
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-1 justify-center">
             <a
               href="/reservas"
               className="bg-linear-to-r from-gray-700 to-gray-800 hover:from-gray-800 hover:to-gray-900 text-white font-bold px-8 py-4 rounded-full transition transform hover:scale-105 shadow-lg"
