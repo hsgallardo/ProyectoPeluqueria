@@ -73,9 +73,17 @@ export default function Reservas() {
       </form>
 
       {mensaje && (
-        <p className="mt-4 text-green-600 text-center">
-          {mensaje}
-        </p>
+        <div className="mt-4">
+          <p className="text-green-600 text-center mb-4">
+            {mensaje}
+          </p>
+          <a 
+            href="/mis-citas" 
+            className="w-full block text-center bg-green-600 text-white p-2 rounded hover:bg-green-700 transition"
+          >
+            Ver mis citas →
+          </a>
+        </div>
       )}
     </div>
   );

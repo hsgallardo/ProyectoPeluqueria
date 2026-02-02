@@ -51,6 +51,9 @@ export default function RootLayout({
               <a href="/reservas" className="hover:text-gray-300 transition">
                 Citas
               </a>
+              <a href="/mis-citas" className="hover:text-gray-300 transition">
+                Mis Citas
+              </a>
               <a href="/contacto" className="hover:text-gray-300 transition">
                 Contacto
               </a>
