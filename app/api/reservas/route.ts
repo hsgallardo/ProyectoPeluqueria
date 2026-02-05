@@ -1,15 +1,15 @@
 import { NextResponse } from "next/server";
-import pool from "@/lib/mysql";
+import conexion from "@/lib/mysql";
 
 export async function GET() {
   try {
-    const connection = await pool.getConnection();
-    const [rows] = await connection.query(
+    const conexionActiva = await conexion.getConnection();
+    const [filas] = await conexionActiva.query(
       "SELECT id, nombre, DATE_FORMAT(fecha, '%Y-%m-%d') as fecha, TIME_FORMAT(hora, '%H:%i') as hora, fechaCreacion FROM reservas ORDER BY fecha DESC"
     );
-    connection.release();
+    conexionActiva.release();
     
-    return NextResponse.json(rows);
+    return NextResponse.json(filas);
   } catch (error) {
     console.error("Error al obtener reservas:", error);
     return NextResponse.json(
@@ -21,22 +21,22 @@ export async function GET() {
 
 export async function POST(req: Request) {
   try {
-    const data = await req.json();
+    const datos = await req.json();
 
-    const connection = await pool.getConnection();
-    const [result] = await connection.query(
+    const conexionActiva = await conexion.getConnection();
+    const [resultado] = await conexionActiva.query(
       "INSERT INTO reservas (nombre, fecha, hora) VALUES (?, ?, ?)",
-      [data.nombre, data.fecha, data.hora]
+      [datos.nombre, datos.fecha, datos.hora]
     );
-    connection.release();
+    conexionActiva.release();
 
     return NextResponse.json({
       message: "Reserva guardada correctamente",
       reserva: {
-        id: (result as any).insertId,
-        nombre: data.nombre,
-        fecha: data.fecha,
-        hora: data.hora,
+        id: (resultado as any).insertId,
+        nombre: datos.nombre,
+        fecha: datos.fecha,
+        hora: datos.hora,
       },
     });
   } catch (error) {
