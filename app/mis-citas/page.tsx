@@ -34,49 +34,51 @@ export default function MisCitas() {
   }, []);
 
   if (cargando) {
-    return <div className="text-center p-6">Cargando citas...</div>;
+    return <div className="text-center p-6 min-h-screen">Cargando citas...</div>;
   }
 
   return (
-    <div className="max-w-4xl mx-auto bg-white p-6 rounded shadow">
-      <h1 className="text-2xl font-bold mb-6">Mis citas</h1>
+    <div className="min-h-screen bg-white py-12 px-4 sm:px-8 md:px-12 lg:px-16">
+      <div className="max-w-4xl mx-auto bg-white p-6 sm:p-8 rounded shadow">
+        <h1 className="text-2xl sm:text-3xl font-bold mb-6">Mis citas</h1>
 
-      {citas.length === 0 ? (
-        <p className="text-gray-500 text-center py-8">No hay citas aún</p>
-      ) : (
-        <div className="overflow-x-auto">
-          <table className="w-full border-collapse border border-gray-300">
-            <thead className="bg-gray-100">
-              <tr>
-                <th className="border border-gray-300 p-3 text-left">Nombre</th>
-                <th className="border border-gray-300 p-3 text-left">Fecha</th>
-                <th className="border border-gray-300 p-3 text-left">Hora</th>
-                <th className="border border-gray-300 p-3 text-left">Creada</th>
-              </tr>
-            </thead>
-            <tbody>
-              {citas.map((cita) => (
-                <tr key={cita.id} className="hover:bg-gray-50">
-                  <td className="border border-gray-300 p-3">{cita.nombre}</td>
-                  <td className="border border-gray-300 p-3">{cita.fecha}</td>
-                  <td className="border border-gray-300 p-3">{cita.hora}</td>
-                  <td className="border border-gray-300 p-3 text-sm text-gray-600">
-                    {new Date(cita.fechaCreacion).toLocaleString("es-ES")}
-                  </td>
+        {citas.length === 0 ? (
+          <p className="text-gray-500 text-center py-8">No hay citas aún</p>
+        ) : (
+          <div className="overflow-x-auto -mx-6 sm:-mx-8 md:mx-0">
+            <table className="w-full border-collapse border border-gray-300">
+              <thead className="bg-gray-100">
+                <tr>
+                  <th className="border border-gray-300 p-2 sm:p-3 text-left text-sm sm:text-base">Nombre</th>
+                  <th className="border border-gray-300 p-2 sm:p-3 text-left text-sm sm:text-base">Fecha</th>
+                  <th className="border border-gray-300 p-2 sm:p-3 text-left text-sm sm:text-base">Hora</th>
+                  <th className="border border-gray-300 p-2 sm:p-3 text-left text-xs sm:text-base">Creada</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
+              </thead>
+              <tbody>
+                {citas.map((cita) => (
+                  <tr key={cita.id} className="hover:bg-gray-50">
+                    <td className="border border-gray-300 p-2 sm:p-3 text-sm sm:text-base">{cita.nombre}</td>
+                    <td className="border border-gray-300 p-2 sm:p-3 text-sm sm:text-base">{cita.fecha}</td>
+                    <td className="border border-gray-300 p-2 sm:p-3 text-sm sm:text-base">{cita.hora}</td>
+                    <td className="border border-gray-300 p-2 sm:p-3 text-xs sm:text-sm text-gray-600">
+                      {new Date(cita.fechaCreacion).toLocaleString("es-ES")}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
 
-      <div className="mt-6">
-        <a
-          href="/reservas"
-          className="inline-block bg-black text-white p-2 rounded hover:bg-gray-800 transition"
-        >
-          ← Volver a hacer cita
-        </a>
+        <div className="mt-6">
+          <a
+            href="/reservas"
+            className="inline-block bg-black text-white px-4 sm:px-6 py-2 sm:py-3 rounded hover:bg-gray-800 transition text-sm sm:text-base"
+          >
+            ← Volver a hacer cita
+          </a>
+        </div>
       </div>
     </div>
   );
