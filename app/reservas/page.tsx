@@ -6,24 +6,24 @@ import { useState } from "react";
 export default function Reservas() {
   const [mensaje, setMensaje] = useState("");
 
-  async function manejarEnvio(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    const formulario = e.currentTarget;
+    const form = e.currentTarget;
 
-    const datoFormulario = {
-      nombre: formulario.nombre.value,
-      fecha: formulario.fecha.value,
-      hora: formulario.hora.value,
+    const formData = {
+      nombre: form.nombre.value,
+      fecha: form.fecha.value,
+      hora: form.hora.value,
     };
 
-    const respuesta = await fetch("/api/reservas", {
+    const res = await fetch("/api/reservas", {
       method: "POST",
-      body: JSON.stringify(datoFormulario),
+      body: JSON.stringify(formData),
     });
 
-    const datos = await respuesta.json();
-    setMensaje(datos.message);
+    const data = await res.json();
+    setMensaje(data.message);
   }
 
   return (
@@ -33,8 +33,11 @@ export default function Reservas() {
           Reserva tu cita
         </h1>
 
-        <form onSubmit={manejarEnvio} className="flex flex-col gap-4">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+
+          {/* NOMBRE */}
           <div className="flex flex-col sm:flex-row sm:items-center border p-3 gap-2 rounded">
+
             <input
               name="nombre"
               placeholder="Nombre"
@@ -43,7 +46,9 @@ export default function Reservas() {
             />
           </div>
 
+          {/* FECHA */}
           <div className="flex flex-col sm:flex-row sm:items-center border p-3 gap-2 rounded">
+
             <input
               name="fecha"
               type="date"
@@ -52,7 +57,9 @@ export default function Reservas() {
             />
           </div>
 
+          {/* HORA */}
           <div className="flex flex-col sm:flex-row sm:items-center border p-3 gap-2 rounded">
+
             <input
               name="hora"
               type="time"

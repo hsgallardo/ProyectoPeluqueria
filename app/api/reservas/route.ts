@@ -1,19 +1,17 @@
 import { NextResponse } from "next/server";
-import conexion from "@/lib/mysql";
+import type { ResultSetHeader, RowDataPacket } from "mysql2/promise";
+
+import pool from "@/lib/db";
 
 export async function GET() {
   try {
-    const conexionActiva = await conexion.getConnection();
-    const [filas] = await conexionActiva.query(
-      "SELECT id, nombre, DATE_FORMAT(fecha, '%Y-%m-%d') as fecha, TIME_FORMAT(hora, '%H:%i') as hora, fechaCreacion FROM reservas ORDER BY fecha DESC"
+    const [rows] = await pool.query<RowDataPacket[]>(
+      "SELECT id, nombre, fecha, hora, fechaCreacion FROM reservas ORDER BY fecha DESC, hora DESC"
     );
-    conexionActiva.release();
-    
-    return NextResponse.json(filas);
-  } catch (error) {
-    console.error("Error al obtener reservas:", error);
+    return NextResponse.json(rows);
+  } catch {
     return NextResponse.json(
-      { message: "Error al obtener reservas" },
+      { message: "Error al obtener las reservas" },
       { status: 500 }
     );
   }
@@ -21,26 +19,33 @@ export async function GET() {
 
 export async function POST(req: Request) {
   try {
-    const datos = await req.json();
+    const data = await req.json();
+    const nombre = String(data?.nombre ?? "").trim();
+    const fecha = String(data?.fecha ?? "").trim();
+    const hora = String(data?.hora ?? "").trim();
 
-    const conexionActiva = await conexion.getConnection();
-    const [resultado] = await conexionActiva.query(
+    if (!nombre || !fecha || !hora) {
+      return NextResponse.json(
+        { message: "Faltan datos obligatorios" },
+        { status: 400 }
+      );
+    }
+
+    const [result] = await pool.execute<ResultSetHeader>(
       "INSERT INTO reservas (nombre, fecha, hora) VALUES (?, ?, ?)",
-      [datos.nombre, datos.fecha, datos.hora]
+      [nombre, fecha, hora]
     );
-    conexionActiva.release();
+
+    const [rows] = await pool.query<RowDataPacket[]>(
+      "SELECT id, nombre, fecha, hora, fechaCreacion FROM reservas WHERE id = ?",
+      [result.insertId]
+    );
 
     return NextResponse.json({
       message: "Reserva guardada correctamente",
-      reserva: {
-        id: (resultado as any).insertId,
-        nombre: datos.nombre,
-        fecha: datos.fecha,
-        hora: datos.hora,
-      },
+      reserva: rows[0] ?? null,
     });
-  } catch (error) {
-    console.error("Error al guardar reserva:", error);
+  } catch {
     return NextResponse.json(
       { message: "Error al guardar la reserva" },
       { status: 500 }

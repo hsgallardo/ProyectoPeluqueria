@@ -57,15 +57,22 @@ export default function MisCitas() {
               </thead>
               <tbody>
                 {citas.map((cita) => {
-                  // Parsear la fecha correctamente
-                  const [year, month, day] = cita.fecha.split("-");
-                  const fechaFormato = `${day}/${month}/${year}`;
-                  
+                  const fechaDate = new Date(cita.fecha);
+                  const fechaFormato = Number.isNaN(fechaDate.getTime())
+                    ? String(cita.fecha)
+                        .split("T")[0]
+                        .split("-")
+                        .reverse()
+                        .join("/")
+                    : fechaDate.toLocaleDateString("es-ES");
+
+                  const horaFormato = String(cita.hora ?? "").slice(0, 5);
+
                   return (
                     <tr key={cita.id} className="hover:bg-gray-50">
                       <td className="border border-gray-300 p-2 sm:p-3 text-sm sm:text-base">{cita.nombre}</td>
                       <td className="border border-gray-300 p-2 sm:p-3 text-sm sm:text-base">{fechaFormato}</td>
-                      <td className="border border-gray-300 p-2 sm:p-3 text-sm sm:text-base">{cita.hora}</td>
+                      <td className="border border-gray-300 p-2 sm:p-3 text-sm sm:text-base">{horaFormato}</td>
                       <td className="border border-gray-300 p-2 sm:p-3 text-xs sm:text-sm text-gray-600">
                         {new Date(cita.fechaCreacion).toLocaleString("es-ES")}
                       </td>
