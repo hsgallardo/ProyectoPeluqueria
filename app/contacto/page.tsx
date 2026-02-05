@@ -83,7 +83,7 @@ export default function Contacto() {
                   icon: '👨',
                   nombre: 'Facebook',
                   handle: '@hugoogallardo',
-                  url: 'https://www.facebook.com/hugoogallardo/'
+                  url: 'https://www.instagram.com/hugoogallardo/'
                 },
                 {
                   icon: '📷',
