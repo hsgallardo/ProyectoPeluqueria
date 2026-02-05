@@ -56,16 +56,22 @@ export default function MisCitas() {
                 </tr>
               </thead>
               <tbody>
-                {citas.map((cita) => (
-                  <tr key={cita.id} className="hover:bg-gray-50">
-                    <td className="border border-gray-300 p-2 sm:p-3 text-sm sm:text-base">{cita.nombre}</td>
-                    <td className="border border-gray-300 p-2 sm:p-3 text-sm sm:text-base">{cita.fecha}</td>
-                    <td className="border border-gray-300 p-2 sm:p-3 text-sm sm:text-base">{cita.hora}</td>
-                    <td className="border border-gray-300 p-2 sm:p-3 text-xs sm:text-sm text-gray-600">
-                      {new Date(cita.fechaCreacion).toLocaleString("es-ES")}
-                    </td>
-                  </tr>
-                ))}
+                {citas.map((cita) => {
+                  // Parsear la fecha correctamente
+                  const [year, month, day] = cita.fecha.split("-");
+                  const fechaFormato = `${day}/${month}/${year}`;
+                  
+                  return (
+                    <tr key={cita.id} className="hover:bg-gray-50">
+                      <td className="border border-gray-300 p-2 sm:p-3 text-sm sm:text-base">{cita.nombre}</td>
+                      <td className="border border-gray-300 p-2 sm:p-3 text-sm sm:text-base">{fechaFormato}</td>
+                      <td className="border border-gray-300 p-2 sm:p-3 text-sm sm:text-base">{cita.hora}</td>
+                      <td className="border border-gray-300 p-2 sm:p-3 text-xs sm:text-sm text-gray-600">
+                        {new Date(cita.fechaCreacion).toLocaleString("es-ES")}
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>

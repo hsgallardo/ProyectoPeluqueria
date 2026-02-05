@@ -1,46 +1,49 @@
 import { NextResponse } from "next/server";
-import { promises as fs } from "fs";
-import path from "path";
+import pool from "@/lib/mysql";
 
-const dataDir = path.join(process.cwd(), "data");
-const reservasFile = path.join(dataDir, "reservas.json");
-
-async function getReservas() {
+export async function GET() {
   try {
-    const data = await fs.readFile(reservasFile, "utf-8");
-    return JSON.parse(data);
-  } catch {
-    return [];
+    const connection = await pool.getConnection();
+    const [rows] = await connection.query(
+      "SELECT id, nombre, DATE_FORMAT(fecha, '%Y-%m-%d') as fecha, TIME_FORMAT(hora, '%H:%i') as hora, fechaCreacion FROM reservas ORDER BY fecha DESC"
+    );
+    connection.release();
+    
+    return NextResponse.json(rows);
+  } catch (error) {
+    console.error("Error al obtener reservas:", error);
+    return NextResponse.json(
+      { message: "Error al obtener reservas" },
+      { status: 500 }
+    );
   }
 }
 
-async function saveReservas(reservas: any[]) {
-  await fs.mkdir(dataDir, { recursive: true });
-  await fs.writeFile(reservasFile, JSON.stringify(reservas, null, 2));
-}
-
-export async function GET() {
-  const reservas = await getReservas();
-  return NextResponse.json(reservas);
-}
-
 export async function POST(req: Request) {
-  const data = await req.json();
+  try {
+    const data = await req.json();
 
-  const reserva = {
-    id: Date.now(),
-    nombre: data.nombre,
-    fecha: data.fecha,
-    hora: data.hora,
-    fechaCreacion: new Date().toISOString(),
-  };
+    const connection = await pool.getConnection();
+    const [result] = await connection.query(
+      "INSERT INTO reservas (nombre, fecha, hora) VALUES (?, ?, ?)",
+      [data.nombre, data.fecha, data.hora]
+    );
+    connection.release();
 
-  const reservas = await getReservas();
-  reservas.push(reserva);
-  await saveReservas(reservas);
-
-  return NextResponse.json({
-    message: "Reserva guardada correctamente",
-    reserva,
-  });
+    return NextResponse.json({
+      message: "Reserva guardada correctamente",
+      reserva: {
+        id: (result as any).insertId,
+        nombre: data.nombre,
+        fecha: data.fecha,
+        hora: data.hora,
+      },
+    });
+  } catch (error) {
+    console.error("Error al guardar reserva:", error);
+    return NextResponse.json(
+      { message: "Error al guardar la reserva" },
+      { status: 500 }
+    );
+  }
 }
