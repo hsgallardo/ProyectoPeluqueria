@@ -7,6 +7,8 @@ export default function Servicios() {
       src: "/cabello.jpg",
       width: 64,
       height: 64,
+      precio: "18€",
+      tiempo: "30 min",
     },
     {
       nombre: "Barba / Afeitado",
@@ -15,6 +17,8 @@ export default function Servicios() {
       src: "/barba.jpg",
       width: 100,
       height: 100,
+      precio: "11€",
+      tiempo: "20 min",
     },
     {
       nombre: "Micropigmentación",
@@ -23,6 +27,8 @@ export default function Servicios() {
       src: "/micro.jpg",
       width: 60,
       height: 60,
+      precio: "80€",
+      tiempo: "60 min",
     },
     {
       nombre: "Coloración",
@@ -31,6 +37,8 @@ export default function Servicios() {
       src: "/color.jpg",
       width: 50,
       height: 50,
+      precio: "50€",
+      tiempo: "45 min",
     },
   ];
 
@@ -80,6 +88,20 @@ export default function Servicios() {
                 <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
                   {servicio.detalles}
                 </p>
+                
+                {/* Precio y Tiempo */}
+                <div className="flex justify-between items-center pt-3 sm:pt-4 border-t border-gray-300 mt-4 sm:mt-6">
+                  <div className="flex gap-4 sm:gap-6">
+                    <div>
+                      <p className="text-xs text-gray-500 uppercase tracking-wide">Precio</p>
+                      <p className="font-bold text-lg sm:text-xl text-gray-900">{servicio.precio}</p>
+                    </div>
+                    <div>
+                      <p className="text-xs text-gray-500 uppercase tracking-wide">Tiempo</p>
+                      <p className="font-bold text-lg sm:text-xl text-gray-900">{servicio.tiempo}</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
